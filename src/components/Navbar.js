@@ -22,14 +22,11 @@ class Navbar extends PureComponent {
     if(currentUser.venueProfileId) push(`/venues/${currentUser.venueProfileId}/edit`)
   }
 
-goToCreateEvent(){
-  const{ currentUser, push } = this.props
+  goToCreateEvent(){
+    const{ currentUser, push } = this.props
 
-  if (currentUser.venueProfileId) push(`/create-event`)
-
-}
-
-
+    if (currentUser.venueProfileId) push(`/create-event`)
+  }
 
   signOutUser(){
     this.props.signOut()
@@ -38,40 +35,18 @@ goToCreateEvent(){
   sessionButtons(){
     const { currentUser } = this.props
 
-    if (currentUser && currentUser.venueProfileId) return(
-      <ul className="navbar-nav ml-auto">
-        <li className="nav-item">
-         { (this.props.searchBar === true) ?  this.showSearchBar() : null }
-        </li>
+    if (currentUser) return(
+      <ul className="navbar-list right">
         <li className="nav-item">
           <span className="nav-link" onClick={this.signOutUser.bind(this)}>
             log out
           </span>
         </li>
-        <li className="nav-item">
+        {currentUser.venueProfileId ? (<li className="nav-item">
           <span className="nav-link" onClick={this.goToCreateEvent.bind(this)}>
             create an event
           </span>
-        </li>
-        <li className="nav-item">
-          <span className="nav-link" onClick={this.goToProfile.bind(this)}>
-            my profile
-          </span>
-        </li>
-      </ul>
-    )
-
-    else if (currentUser && !currentUser.venueProfileId) return(
-      <ul className="navbar-nav ml-auto">
-        <li className="nav-item">
-          { (this.props.searchBar === true) ?  this.showSearchBar() : null }
-        </li>
-        <li className="nav-item">
-          <span className="nav-link" onClick={this.signOutUser.bind(this)}>
-            log out
-          </span>
-        </li>
-
+        </li>) : null}
         <li className="nav-item">
           <span className="nav-link" onClick={this.goToProfile.bind(this)}>
             my profile
@@ -81,7 +56,7 @@ goToCreateEvent(){
     )
 
     else return(
-      <ul className="navbar-nav ml-auto">
+      <ul className="navbar-list right">
         <li className="nav-item">
           { (this.props.searchBar === true) ?  this.showSearchBar() : null }
         </li>
@@ -97,24 +72,22 @@ goToCreateEvent(){
 
   showSearchBar() {
     return (
-      <ul className="navbar-nav ml-auto">
-        <li className="nav-item">
-          <SearchBar id="nav-searchbar" />
-        </li>
-      </ul>
+      <div className="searchbar">
+        <SearchBar id="nav-searchbar" />
+      </div>
     )
   }
 
   render() {
-
+    const { currentUser } = this.props
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-faded">
-        <Link to={'/'} className="navbar-brand"> StageFinder </Link>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <div className="nav">
+        {/*<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
-        </button>
-        <div id="navbarNavDropdown" className="navbar-collapse collapse">
-          <ul className="navbar-nav mr-auto">
+        </button>*/}
+        <div className="navbar-links">
+          <Link to={'/'} className="brand"> StageFinder </Link>
+          <ul className="navbar-list left">
             <li className="nav-item">
               <Link to={'/events'} className="nav-link">all events</Link>
             </li>
@@ -124,13 +97,11 @@ goToCreateEvent(){
             <li className="nav-item">
               <Link to={'/artists'} className="nav-link">all artists</Link>
             </li>
-
-
           </ul>
-
-            { this.sessionButtons() }
+          { (this.props.searchBar && currentUser && currentUser.venueProfileId) ?  this.showSearchBar() : null }
+          { this.sessionButtons() }
         </div>
-      </nav>
+      </div>
     )
   }
 }

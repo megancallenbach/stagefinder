@@ -59,7 +59,7 @@ class EventPage extends PureComponent {
               { events.map(this.renderEvent.bind(this)) }
             </div>
           </div>
-          < Footer/>
+          <Footer/>
         </div>
       </div>
     )

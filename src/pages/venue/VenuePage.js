@@ -26,7 +26,7 @@ class VenuePage extends PureComponent {
           <button className="btn-venue"><Link to={`/venues/${venue._id}`} className="link">View Venue</Link></button>
         </div>
       </div>
- )
+    )
     return (
       <div className="venue row">
         <div className="venue-content-odd col-md-5">
@@ -41,11 +41,11 @@ class VenuePage extends PureComponent {
         </div>
       </div>
     )
-}
+  }
 
   render() {
    const venues = this.props.venues
-    if (!venues) return null
+    if (!venues) return null;
 
     return(
       <div className="venue-page">

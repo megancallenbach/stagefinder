@@ -9,6 +9,7 @@ import Footer from '../../components/Footer'
 class SearchResults extends PureComponent {
 
   renderEvent(event, index){
+    if (!event.title) return null;
     return (
       <div key={index} className="event col-sm-6">
         <div className="event-box">
