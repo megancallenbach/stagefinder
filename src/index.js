@@ -27,10 +27,11 @@ import Contact from './pages/Contact'
 import Faq from './pages/Faq'
 import About from './pages/About'
 import App from './App'
+import { useBasename } from 'history'
 
 ReactDOM.render(
   <Provider store={store}>
-      <Router history={history}>
+      <Router history={ useBasename(() => history)({ basename: '/stagefinder' }) }>
         <Route path="/" component={App}>
           <IndexRoute component={HomePage} />
           <Route path="/sign-up" component={SignUp} />

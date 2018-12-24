@@ -6,17 +6,24 @@
   background-position: center center
   width: 100%
   overflow-y: scroll
+
   .event-name
     font-family: 'Montserrat Subrayada', sans-serif
     font-size: 28px
     min-height: 57px
+    @media screen and (max-width: 420px)
+      font-size: 20px;
+
   .events-title
     margin-top: 10px
 
+
 .events-container
-  width: 70%
+  width: 90%
   margin: 0 auto
   min-height: 90%
+  @media screen and (max-width: 420px)
+    width: 100%
 
 
 .scroll
@@ -25,6 +32,8 @@
     font-family: 'Montserrat Subrayada', sans-serif
     font-size: 38px
     color: rgba(255, 255, 255, 0.9)
+    @media screen and (max-width: 420px)
+      font-size: 28px;
 
 .create-event
   height: 100vh
@@ -34,11 +43,6 @@
 
 .event
   text-align: center
-
-
-
-
-
 
 .btn-event
   font-family: 'Montserrat Subrayada', sans-serif
@@ -52,8 +56,6 @@
 
 .btn-event:focus
   outline: 0
-
-
 
 .time
   font-size: 12px

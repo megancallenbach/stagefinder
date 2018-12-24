@@ -1,19 +1,29 @@
 .venue-detail-page {
-  height: 100vh; }
+  height: 100vh;
+  overflow-y: scroll; }
   .venue-detail-page .row {
     padding: 0;
     margin: 0; }
   .venue-detail-page .venue-detail {
     width: 70%;
     margin: 30px auto; }
+    @media screen and (max-width: 420px) {
+      .venue-detail-page .venue-detail {
+        width: 80%; } }
   .venue-detail-page .venue-photo {
     width: auto;
     height: 300px;
     overflow: hidden;
     padding: 0; }
+    @media screen and (max-width: 420px) {
+      .venue-detail-page .venue-photo {
+        height: 200px; } }
     .venue-detail-page .venue-photo img {
       width: 100%;
       height: 300px; }
+      @media screen and (max-width: 420px) {
+        .venue-detail-page .venue-photo img {
+          height: 200px; } }
   .venue-detail-page .footer-container {
     position: fixed;
     bottom: 0;
@@ -23,6 +33,9 @@
     background-color: black;
     padding: 50px;
     overflow: hidden; }
+    @media screen and (max-width: 420px) {
+      .venue-detail-page .black-box {
+        height: 270px; } }
   .venue-detail-page .orange-box {
     padding: 50px;
     height: 400px;
@@ -53,6 +66,10 @@
       font-family: 'Montserrat Subrayada', sans-serif;
       color: #111;
       text-align: left; }
+
+@media screen and (max-width: 420px) {
+  .venue-event-title {
+    font-size: 18px; } }
 
 .col-sm-5 {
   padding: 0; }

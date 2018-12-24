@@ -2,10 +2,13 @@
 .App
   color: rgba(255, 255, 255, 0.9)
   font-family: 'Khula', sans-serif
-  background-image: url('./images/bg1.jpg')
+  background: url('./images/bg1.jpg') no-repeat center center fixed
   background-size: cover
   width: 100%
   background-color: #2B292E
+  @media screen and (max-width: 500px)
+    background-size: cover;
+
 
 .App .scroll
   height: 100vh
@@ -17,3 +20,6 @@
 
 .description
   font-size: 13px
+
+img
+  object-fit: cover;

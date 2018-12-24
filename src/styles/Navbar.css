@@ -28,7 +28,8 @@
 
 @media screen and (max-width: 920px) {
   .navbar-list {
-    padding: 0; } }
+    padding: 0;
+    justify-content: center; } }
 
 .navbar-list.left {
   flex-grow: 1; }

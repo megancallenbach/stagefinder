@@ -10,19 +10,28 @@
     font-family: 'Montserrat Subrayada', sans-serif;
     font-size: 28px;
     min-height: 57px; }
+    @media screen and (max-width: 420px) {
+      .event-page .event-name {
+        font-size: 20px; } }
   .event-page .events-title {
     margin-top: 10px; }
 
 .events-container {
-  width: 70%;
+  width: 90%;
   margin: 0 auto;
   min-height: 90%; }
+  @media screen and (max-width: 420px) {
+    .events-container {
+      width: 100%; } }
 
 .scroll h1 {
   text-align: center;
   font-family: 'Montserrat Subrayada', sans-serif;
   font-size: 38px;
   color: rgba(255, 255, 255, 0.9); }
+  @media screen and (max-width: 420px) {
+    .scroll h1 {
+      font-size: 28px; } }
 
 .create-event {
   height: 100vh; }

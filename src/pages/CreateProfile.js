@@ -8,7 +8,7 @@ export default class CreateProfile extends PureComponent {
   render() {
     return (
       <div className="create-profile">
-        < Navbar />
+        <Navbar />
         <div className="pageWrapper">
           <div className="text">
             <h2 className="header-text">Welkom bij StageFinder! Maak meteen een profiel aan.</h2>
@@ -18,7 +18,7 @@ export default class CreateProfile extends PureComponent {
             <button className="btn-go"><Link to={'/create-venue'} className="link">Ik heb een stage</Link></button>
           </div>
         </div>
-        < Footer />
+        <Footer />
       </div>
     )
   }

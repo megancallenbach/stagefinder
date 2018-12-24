@@ -14,7 +14,7 @@ class VenuePage extends PureComponent {
 
   renderVenue(venue, index){
     if (index % 2 === 0) return(
-      <div key={index} className="venue row">
+      <div key={index} className="venue venue-even row">
         <div className="venue-image col-md-7">
           <img src={venue.photo} alt="" />
         </div>
@@ -28,7 +28,7 @@ class VenuePage extends PureComponent {
       </div>
     )
     return (
-      <div className="venue row">
+      <div className="venue venue-odd row">
         <div className="venue-content-odd col-md-5">
           <p className="venue-name">{venue.name}</p>
           <p className="venue-city">{venue.city}<i className="fa fa-map-marker"></i></p>
