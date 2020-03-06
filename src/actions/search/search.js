@@ -4,7 +4,7 @@ import { history } from '../../store'
 export const SEARCH_RESULTS = 'SEARCH_RESULTS'
 export const SEARCH_INPUT = 'SEARCH_INPUT'
 
-const elasticsearchConnectionString = 'https://d65crirqfw:1qwqmjogp7@yew-653680773.eu-west-1.bonsaisearch.net';
+const elasticsearchConnectionString = 'https://41fm65xs2n:x7knciawu5@yew-541626802.eu-west-1.bonsaisearch.net:443';
 
 const client = new elasticsearch.Client({
   host: elasticsearchConnectionString
